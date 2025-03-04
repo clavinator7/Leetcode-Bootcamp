@@ -1,0 +1,15 @@
+class Solution(object):
+    def productExceptSelf(self, nums):
+        lhs = 1
+        rhs = 1
+        result = [0] * (len(nums))
+        
+        for i in range(len(nums)):
+            result[i] = lhs
+            lhs *= nums[i]
+
+        for i in range(len(nums)-1, -1, -1):
+            result[i] *= rhs
+            rhs *= nums[i]
+        
+        return result
