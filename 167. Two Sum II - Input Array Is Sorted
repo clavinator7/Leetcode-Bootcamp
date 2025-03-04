@@ -9,4 +9,3 @@ class Solution(object):
                 lhs += 1
             else:
                 return [lhs + 1, rhs + 1]
-        

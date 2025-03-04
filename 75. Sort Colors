@@ -1,0 +1,15 @@
+class Solution(object):
+    def sortColors(self, nums):
+        ct0 = 0
+        ct1 = 0
+        ct2 = 0
+        for i in range(len(nums)):
+            if nums[i] == 0:
+                ct0 += 1
+            elif nums[i] == 1:
+                ct1 += 1
+            else:
+                ct2 += 1
+        nums[:ct0] = [0] * ct0
+        nums[ct0:ct0 + ct1] = [1] * ct1
+        nums[ct0 + ct1:] = [2] * ct2
